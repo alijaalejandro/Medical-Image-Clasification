@@ -20,4 +20,4 @@ En particular, nuestro conjunto de datos está disponible públicamente [aquí](
 El conjunto de datos de rayos X de tórax comprende **112.120** imágenes de rayos X de vista frontal de **30.805** pacientes únicos con las **etiquetas de imágenes de catorce enfermedades** extraídas de texto (donde cada imagen puede tener múltiples etiquetas), extraídas de los informes radiológicos asociados utilizando procesamiento de lenguaje natural.
 
 Ejemplo de imágen del repositorio:
-![imagen de paciente sano](../images/00012908_000.png)
+![imagen de paciente sano](../images/00012908_000.jpg)
