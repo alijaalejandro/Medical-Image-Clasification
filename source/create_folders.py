@@ -30,7 +30,7 @@ for cell in folders:
 for idx, row in files.iterrows():
     fileName=row['Image Index']
     folderName=row['Finding Labels']
-    var3 = 'images/' + fileName
+    var3 = 'data/images/' + fileName
     shutil.copy(var3,folderName)
     #print(var3)
 #files.apply(lambda row: os.mkdir( files['Finding Labels'] ) )

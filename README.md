@@ -21,3 +21,29 @@ El conjunto de datos de rayos X de tórax comprende **112.120** imágenes de ray
 
 Ejemplo de imágen del repositorio:
 ![imagen de paciente sano](/images/00012908_000.jpg)
+
+## Metadatos de las imágenes - Anotaciones
+
+Como parte del conjunto de datos, se proporciona una [lista ordenada](/source/Data_Entry_2017_v2020.csv) que relaciona cada imágen con la patología diagnosticada por un especialista
+
+```
+      Image.Index         Finding.Labels Follow.up.. Patient.ID Patient.Age
+1 00000001_000.png           Cardiomegaly           0          1          57
+2 00000001_001.png Cardiomegaly|Emphysema           1          1          58
+3 00000001_002.png  Cardiomegaly|Effusion           2          1          58
+```
+
+
+# Descarga masiva de imágenes
+
+- Los gestores del repositorio de imágenes ponen a disposición un [script de Python](/source/batch_download_zips.py) para realizar una descarga desatendida de todos los paquetes de imágenes.
+
+- Una vez descargados todos los paquetes comprimidos de imágenes debemos de extraerlos en un único directorio denominado denominado [images](/data/images)
+
+- Como parte de este proyecto, hemos desarrollado un [script adicional de Python](/source/create_folders.py) que, partiendo del directorio donde hemos dejado las imágenes descomprimidas, seleccionamos una patología deseada y ejecutamos para que el script clasifique en un directorio específico las imágenes con dicha patología (a partir de la lista mencionada en la sección anterior)
+
+```
+table_orig=table
+table=table[table['Finding Labels']=='No Finding']
+```
+
