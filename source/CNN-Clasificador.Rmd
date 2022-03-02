@@ -2,26 +2,26 @@
 title: "Proyecto de clasificación de imágenes médicas"
 author: "Alejandro Alija"
 output:
-  html_notebook: 
-    toc: yes
+  github_document:
+    toc: true
     toc_depth: 2
+    fig_width: 5
+    fig_height: 5
+    html_preview: false
   pdf_document:
     toc: yes
     toc_depth: '2'
   html_document:
-    keep_md: yes
+    keep_md: no
     df_print: paged
     highlight: tango
     number_sections: yes
     theme: united
     toc: yes
     toc_depth: 2
-  github_document:
-    toc: true
+  html_notebook: 
+    toc: yes
     toc_depth: 2
-    fig_width: 5
-    fig_height: 5
-    dev: jpeg
 date: "Febrero, 2022"
 ---
 
