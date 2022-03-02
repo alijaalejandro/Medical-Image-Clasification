@@ -2,6 +2,12 @@
 title: "Proyecto de clasificación de imágenes médicas"
 author: "Alejandro Alija"
 output:
+  html_notebook: 
+    toc: yes
+    toc_depth: 2
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
   html_document:
     keep_md: yes
     df_print: paged
@@ -10,9 +16,6 @@ output:
     theme: united
     toc: yes
     toc_depth: 2
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
 date: "Febrero, 2022"
 ---
 
