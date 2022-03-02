@@ -1,4 +1,4 @@
-![portada](images/portada.png)
+![portada](/images/portada.png)
 
 # Caso de uso: clasificación de imágenes médica mediante modelos de inteligencia artificial
 Este repositorio contiene un proyecto de clasificación de imágenes de radio-diagnóstico mediante un modelo de IA utilizando Python, R y Keras.
@@ -7,7 +7,7 @@ Este repositorio contiene un proyecto de clasificación de imágenes de radio-di
 
 Este repositorio complementa al informe sobre *Tecnologías emergentes y datos abiertos: introducción a la ciencia de datos aplicada al análisis de imagen* y forma parte del contenido práctico que acompaña al informe teórico. Recordamos que la metodología seguida en esta serie de informes, estructura el contenido en tres secciones diferentes: _awarenes_, _inspire_ y _action_, siendo esta última la parte más práctica y aplicada del informe. En esta ocasión, hemos creído conveniente proporcionar al lector esta sección de _Action_ en forma de repositorio de código. En este repositorio, el lector encontrará todos los elementos necesarios para reproducir (si así lo desea) un ejemplo concreto de análisis de imagen mediante técnicas de inteligencia artificial.
 
-![metodologia](images/metodologia.png)
+![metodologia](/images/metodologia.png)
 
 
 # Introducción
