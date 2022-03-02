@@ -58,6 +58,6 @@ table=table[table['Finding Labels']=='No Finding']
 
 # El ejemplo paso-a-paso
 
-Una vez leída esta introducción, el lector que lo desee puede tratar de seguir el código paso a paso que se encuentra en este [notebook de R](/source/CNN-Clasificador.Rmd). Aquellos lectores que deseen ejecutar el proyecto completo, pueden clonar o descargar este repositorio y abrir el [proyecto de RStudio](/source/UseCase1 - CT Scans.Rproj) 
+Una vez leída esta introducción, el lector que lo desee puede tratar de seguir el código paso a paso que se encuentra en este [notebook de R](/source/CNN-Clasificador.Rmd). Aquellos lectores que deseen ejecutar el proyecto completo, pueden clonar o descargar este repositorio y abrir el [proyecto de RStudio](/source/UseCase1-CT-Scans.Rproj) 
 
 
