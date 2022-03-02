@@ -16,6 +16,12 @@ output:
     theme: united
     toc: yes
     toc_depth: 2
+  github_document:
+    toc: true
+    toc_depth: 2
+    fig_width: 5
+    fig_height: 5
+    dev: jpeg
 date: "Febrero, 2022"
 ---
 
@@ -56,6 +62,7 @@ Lo primero que debemos hacer es cargar las dependencias (librerías) que vamos a
 
 ```{r}
 library(tidyverse)
+library(rmarkdown)
 theme_set(theme_light())
 library(keras)
 ```
