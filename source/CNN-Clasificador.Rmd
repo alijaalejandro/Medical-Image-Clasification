@@ -35,11 +35,11 @@ knitr::opts_chunk$set(echo = TRUE,
 
 # Introducción
 
-En este ejemplo, mostramos la capacidad de los algoritmos de Deep Learning para clasificar imágenes de radiodiagnóstico médico. El objetivo de este proyecto es entrenar a un algoritmo para que sea capaz de clasificar automáticamente una imágen de una radiografía de pecho en dos categorías (enferma vs no-enferma). 
+En este ejemplo, mostramos la capacidad de los algoritmos de Deep Learning para clasificar imágenes de radiodiagnóstico médico. El objetivo de este proyecto es entrenar a un algoritmo para que sea capaz de clasificar automáticamente una imágen de una radiografía de pecho en dos categorías (enferma vs no-enferma).
 
 # Proyectos previos
 
-Este proyecto es una adaptación del proyecto original de Michael Blum [tweeted](https://twitter.com/mblum_g/status/1475940763716444161?s=20) sobre el desafío [STOIC2021 - dissease-19 AI challenge](https://stoic2021.grand-challenge.org/stoic2021/). El proyecto roiginal de Michael partía de un conjunto de imágenes de pacientes con patología dissease-19 junto con otros pacientes sanos para hacer de contraste. Del proyecto original de Michael, [Olivier Gimenez](https://oliviergimenez.github.io/) utilizó un conjunto de datos similar al del proyetco original publicado en una competición de [Kaggle](https://en.wikipedia.org/wiki/Kaggle) repository <https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset>. La razón de utilizar este nuevo dataset es que era considerablemente más manejable que el original (280GB). El nuevo dataset pesaba alrededor de 250MB y contenía algo más de 1000 imágenes de pacientes sanos y enfermos. El código del proyecto de Olivier puede encontrase en [Github](https://github.com/oliviergimenez/bin-image-classif). 
+Este proyecto es una adaptación del proyecto original de Michael Blum [tweeted](https://twitter.com/mblum_g/status/1475940763716444161?s=20) sobre el desafío [STOIC2021 - dissease-19 AI challenge](https://stoic2021.grand-challenge.org/stoic2021/). El proyecto roiginal de Michael partía de un conjunto de imágenes de pacientes con patología dissease-19 junto con otros pacientes sanos para hacer de contraste. Del proyecto original de Michael, [Olivier Gimenez](https://oliviergimenez.github.io/) utilizó un conjunto de datos similar al del proyetco original publicado en una competición de [Kaggle](https://en.wikipedia.org/wiki/Kaggle) repository <https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset>. La razón de utilizar este nuevo dataset es que era considerablemente más manejable que el original (280GB). El nuevo dataset pesaba alrededor de 250MB y contenía algo más de 1000 imágenes de pacientes sanos y enfermos. El código del proyecto de Olivier puede encontrase en [Github](https://github.com/oliviergimenez/bin-image-classif).
 
 # Conjunto de Datos
 
@@ -47,17 +47,16 @@ En nuestro caso, inspirándonos en estos dos fantásticos proyectos previos, dam
 
 En particular, nuestro conjunto de datos está disponible públicamente [aquí](https://nihcc.app.box.com/v/ChestXray-NIHCC/folder/36938765345). El repositorio incluye toda la información necesario para usarlo y en la descripción los autores comentan:
 
->El examen de rayos X de tórax es uno de los exámenes de imágenes médicas más frecuentes y rentables. Sin embargo, el diagnóstico clínico de la radiografía de tórax puede ser un desafío y, a veces, se cree que es más difícil que el diagnóstico mediante imágenes de [TC](https://es.wikipedia.org/wiki/Tomograf%C3%ADa_axial_computarizada) (Tomografía Computerizada) de tórax_
+> El examen de rayos X de tórax es uno de los exámenes de imágenes médicas más frecuentes y rentables. Sin embargo, el diagnóstico clínico de la radiografía de tórax puede ser un desafío y, a veces, se cree que es más difícil que el diagnóstico mediante imágenes de [TC](https://es.wikipedia.org/wiki/Tomograf%C3%ADa_axial_computarizada) (Tomografía Computerizada) de tórax\_
 
 El conjunto de datos de rayos X de tórax comprende **112.120** imágenes de rayos X de vista frontal de **30.805** pacientes únicos con las **etiquetas de imágenes de catorce enfermedades** extraídas de texto (donde cada imagen puede tener múltiples etiquetas), extraídas de los informes radiológicos asociados utilizando procesamiento de lenguaje natural.
 
-Ejemplo de imágen del repositorio:
-![imagen de paciente sano](../images/00012908_000.jpg)
-
+Ejemplo de imágen del repositorio: ![imagen de paciente sano](../images/00012908_000.jpg)
 
 # El código paso a paso
 
 ## Carga de dependencias
+
 Lo primero que debemos hacer es cargar las dependencias (librerías) que vamos a necesitar en nuestro análisis. El paquete de R más representativo de este conjunto de dependencias es [Keras](https://keras.io/). En este [post]() ya comentamos sobre el uso de Keras como framework de Deep Learning.
 
 ```{r}
@@ -109,7 +108,7 @@ ndissease  <- ndissease[,,,1]
 ndissease_reshaped <- array_reshape(ndissease, c(nrow(ndissease), 100*100))
 ```
 
-Tenemos `r nrow(dissease_reshaped)` imágenes de rayos-x de personas con enfermedad y `r nrow(dissease_reshaped)` imágenes de personas sin enfermedad. 
+Tenemos `r nrow(dissease_reshaped)` imágenes de rayos-x de personas con enfermedad y `r nrow(dissease_reshaped)` imágenes de personas sin enfermedad.
 
 # Visualización previa de los datos/imágenes
 
@@ -136,7 +135,6 @@ library(patchwork)
 plotdissease + plotndissease
 ```
 
-
 # Comenzamos el análisis
 
 Lo primero que vamos a hacer es mezclar las imágenes de pacientes con enfermedad y sin ella.
@@ -149,11 +147,9 @@ shuffle <- sample(nrow(df), replace = F)
 df <- df[shuffle, ]
 ```
 
-
 # El modelo: Convolutional neural network (CNN)
 
 Lo primero que hacemos dividir el conunto total de imágenes en dos conjuntos siguiendo la proporción (80%/20%). Es decir, vamos a entrenar el algoritmo con el 80% de las imágenes y validarlo con el 20% restante.
-
 
 ```{r}
 set.seed(2022)
@@ -205,8 +201,7 @@ fit_dissease <- model %>%
       validation_split = 0.2)
 ```
 
-Una visualización rápida sobre como se comporta el algoritmo sobre las imágenes que hemos reservado para validar. 
-
+Una visualización rápida sobre como se comporta el algoritmo sobre las imágenes que hemos reservado para validar.
 
 ```{r}
 plot(fit_dissease)
@@ -236,5 +231,3 @@ save_model_tf(model, "model/disseasemodel") # save the model
 # Conclusiones
 
 Hemos entrenado una algoritmo de tipo CNN Convolutional neural network-CNN para realizar clasificaciones binarias (enfermo vs no-enfermo) sobre un conjunto de imágenes de rayos-x de pecho tanto de pacientes sanos como de pacientes con varias patologías. Por sencillez, hemos escogido pacientes sanos y pacientes que presentan un Pneumothorax previamente identificado por un médico. El resultado del entrenamiento nos ofrece un algoritmo
-
-

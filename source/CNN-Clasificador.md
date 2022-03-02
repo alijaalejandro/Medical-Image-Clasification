@@ -262,7 +262,7 @@ model %>%
 ```
 
     ##      loss  accuracy 
-    ## 0.6962461 0.5400000
+    ## 0.6932819 0.6000000
 
 Hacemos ahora algunas predicciones sobre imágenes de pacientes. Es
 decir, una vez entrenado y validado el algoritmo, nos preguntamos como
@@ -279,8 +279,8 @@ table(Prediction = as.numeric(predictedclasses[,2]), Truth = test_target)
 
     ##           Truth
     ## Prediction  0  1
-    ##          0 26 23
-    ##          1  0  1
+    ##          0 17 11
+    ##          1  9 13
 
 Muy genial. XXX se clasifica erróneamente como enfermo. Guardemos
 nuestro modelo para un uso posterior.
