@@ -12,28 +12,28 @@ Este repositorio complementa al informe sobre *Tecnologías emergentes y datos a
 
 # Introducción
 
-En este ejemplo, mostramos la capacidad de los algoritmos de Deep Learning para clasificar imágenes de radiodiagnóstico médico. El objetivo de este proyecto es entrenar a un algoritmo para que sea capaz de clasificar automáticamente una imágen de una radiografía de pecho en dos categorías (enferma vs no-enferma). 
+En este ejemplo, mostramos la capacidad de los algoritmos de Deep Learning para clasificar imágenes de radiodiagnóstico médico. *El objetivo de este proyecto es entrenar a un algoritmo para que sea capaz de clasificar automáticamente una imágen de una radiografía de pecho en dos categorías (enferma vs no-enferma)*. 
 
 # Proyectos previos
 
-Este proyecto es una adaptación del proyecto original de Michael Blum [tweeted](https://twitter.com/mblum_g/status/1475940763716444161?s=20) sobre el desafío [STOIC2021 - dissease-19 AI challenge](https://stoic2021.grand-challenge.org/stoic2021/). El proyecto original de Michael, partía de un conjunto de imágenes de pacientes con patología dissease-19 junto con otros pacientes sanos para hacer de contraste. En una segunda aproximación, [Olivier Gimenez](https://oliviergimenez.github.io/) utilizó un conjunto de datos similar al del proyetco original publicado en una competición de [Kaggle](https://en.wikipedia.org/wiki/Kaggle) repository <https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset>. La razón de utilizar este nuevo dataset es que era considerablemente más manejable que el original (280GB). El nuevo dataset pesaba alrededor de 250MB y contenía algo más de 1000 imágenes de pacientes sanos y enfermos. El código del proyecto de Olivier puede encontrase en [Github](https://github.com/oliviergimenez/bin-image-classif). 
+Este proyecto es una adaptación del proyecto original de Michael Blum [tweeted](https://twitter.com/mblum_g/status/1475940763716444161?s=20) sobre el desafío [STOIC2021 - dissease-19 AI challenge](https://stoic2021.grand-challenge.org/stoic2021/). El proyecto original de Michael, partía de un conjunto de imágenes de pacientes con patología Covid-19, junto con otros pacientes sanos para hacer de contraste. En una segunda aproximación, [Olivier Gimenez](https://oliviergimenez.github.io/) utilizó un conjunto de datos similar al del proyecto original publicado en una competición de [Kaggle](https://en.wikipedia.org/wiki/Kaggle) (repositorio: <https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset>). Este nuevo _dataset_ (250 MB) era considerablemente más manejable que el original (280GB). El nuevo _dataset_ contenía algo más de 1000 imágenes de pacientes sanos y enfermos. El código del proyecto de Olivier puede encontrase en el siguiente repositorio de [Github](https://github.com/oliviergimenez/bin-image-classif). 
 
 # Conjunto de Datos
 
-En nuestro caso, inspirándonos en estos dos fantásticos proyectos previos, damos un paso más. En este proyecto, partimos de un conjunto de datos (imágenes médicas) de radio-diagnóstico que están disponibles en el repositorio abierto del [NIH](https://clinicalcenter.nih.gov/). El Centro Clínico NIH es un hospital dedicado únicamente a la investigación clínica en el campus de los Institutos Nacionales de Salud en Bethesda, Maryland (EEUU). En el post [10 repositorios de datos públicos relacionados con la salud y el bienestar](https://datos.gob.es/es/noticia/10-repositorios-de-datos-publicos-relacionados-con-la-salud-y-el-bienestar) se cita al NIH como uno de los orígenes de datos sanitarios de calidad.
+En nuestro caso, inspirándonos en estos dos fantásticos proyectos previos, damos un paso más. En este proyecto, partimos de un conjunto de datos (imágenes médicas) de radio-diagnóstico que están disponibles en el repositorio abierto del [NIH](https://clinicalcenter.nih.gov/). El Centro Clínico NIH es un hospital dedicado únicamente a la investigación clínica en el campus del Instituto Nacional de Salud en Bethesda, Maryland (EEUU). En el post [10 repositorios de datos públicos relacionados con la salud y el bienestar](https://datos.gob.es/es/noticia/10-repositorios-de-datos-publicos-relacionados-con-la-salud-y-el-bienestar) se cita al NIH como uno de los orígenes de datos sanitarios de calidad.
 
 En particular, nuestro conjunto de datos está disponible públicamente [aquí](https://nihcc.app.box.com/v/ChestXray-NIHCC/folder/36938765345). El repositorio incluye toda la información necesario para usarlo y en la descripción los autores comentan:
 
->El examen de rayos X de tórax es uno de los exámenes de imágenes médicas más frecuentes y rentables. Sin embargo, el diagnóstico clínico de la radiografía de tórax puede ser un desafío y, a veces, se cree que es más difícil que el diagnóstico mediante imágenes de [TC](https://es.wikipedia.org/wiki/Tomograf%C3%ADa_axial_computarizada) (Tomografía Computerizada) de tórax_
+>El examen de rayos X de tórax es uno de los exámenes de imágenes médicas más frecuentes y rentables. Sin embargo, el diagnóstico clínico de la radiografía de tórax puede ser un desafío y, a veces, se cree que es más difícil que el diagnóstico mediante imágenes de [TC](https://es.wikipedia.org/wiki/Tomograf%C3%ADa_axial_computarizada) (Tomografía Computerizada) de tórax.
 
-El conjunto de datos de rayos X de tórax comprende **112.120** imágenes de rayos X de vista frontal de **30.805** pacientes únicos con las **etiquetas de imágenes de catorce enfermedades** extraídas de texto (donde cada imagen puede tener múltiples etiquetas), extraídas de los informes radiológicos asociados utilizando procesamiento de lenguaje natural.
+El conjunto de datos de rayos X de tórax comprende **112.120** imágenes de rayos-X (vista frontal) de **30.805** pacientes únicos. Las imágenes se acompañan con las **etiquetas asociadas de catorce enfermedades** (donde cada imagen puede tener múltiples etiquetas), extraídas de los informes radiológicos asociados utilizando procesamiento de lenguaje natural (NLP). Si quieres ampliar la información sobre el campo de procesamiento del lenguaje natural puedes consultar el [siguiente informe](https://datos.gob.es/es/documentacion/tecnologias-emergentes-y-datos-abiertos-procesamiento-del-lenguaje-natural).
 
-Ejemplo de imágen del repositorio:
+A continuación, mostramos una imagen tipo de más de 100.000 que ofrece el repositorio mencionado.
 ![imagen de paciente sano](/images/00012908_000.jpg)
 
 ## Metadatos de las imágenes - Anotaciones
 
-Como parte del conjunto de datos, se proporciona una [lista ordenada](/source/Data_Entry_2017_v2020.csv) que relaciona cada imágen con la patología diagnosticada por un especialista
+Como parte del conjunto de datos, se proporciona una [lista ordenada](/source/Data_Entry_2017_v2020.csv) que relaciona cada imágen con la patología diagnosticada por un especialista. Esta lista de etiquetas es la que se utiliza para clasificar las imágenes en directorios que posteriormente se utilizan en el clasificador binario. Es decir, el modelo de IA se entrenará con las imágenes almacenadas en un directorio que identificará la enfermedad que buscamos identificar. En Este proyecto, de toda la lista de enfermedades, hemos escogido el _Pneumothorax_. De esta forma, de todas las posibles enfermedades, hemos creado dos directorios: uno con las imágenes de pacientes sanos y otro con las imágenes de pacientes que presentan _Pneumothorax_.
 
 ```
       Image.Index         Finding.Labels Follow.up.. Patient.ID Patient.Age
@@ -45,6 +45,8 @@ Como parte del conjunto de datos, se proporciona una [lista ordenada](/source/Da
 
 # Descarga masiva de imágenes
 
+Para obtener las imágenes del repositorio de datos hemos seguido el siguiente procedimiento:
+
 - Los gestores del repositorio de imágenes ponen a disposición un [script de Python](/source/batch_download_zips.py) para realizar una descarga desatendida de todos los paquetes de imágenes.
 
 - Una vez descargados todos los paquetes comprimidos de imágenes debemos de extraerlos en un único directorio denominado denominado [images](/data/images)
@@ -54,6 +56,17 @@ Como parte del conjunto de datos, se proporciona una [lista ordenada](/source/Da
 ```
 table_orig=table
 table=table[table['Finding Labels']=='No Finding']
+```
+Editando la anterior línea de código en este script de python le decimos al programa que almacene las imágenes de la enfermedad deseada en un nuevo directorio. Es decir, en nuestro caso, lo hemos ejecutado 2 veces:
+
+- Primero, seleccionamos las imágenes de los pacientes sanos:
+```
+table=table[table['Finding Labels']=='No Finding']
+```
+- Segundo, seleccionamos las imágenes de los pacientes que presentan _Pneumothorax_:
+
+```
+table=table[table['Finding Labels']=='Pneumothorax']
 ```
 
 # El ejemplo paso-a-paso
