@@ -35,7 +35,7 @@ A continuación, mostramos una imagen tipo de más de 100.000 que ofrece el repo
 
 Como parte del conjunto de datos, se proporciona una [lista ordenada](/source/Data_Entry_2017_v2020.csv) que relaciona cada imágen con la patología diagnosticada por un especialista. Esta lista de etiquetas es la que se utiliza para clasificar las imágenes en directorios que posteriormente se utilizan en el clasificador binario. Es decir, el modelo de IA se entrenará con las imágenes almacenadas en un directorio que identificará la enfermedad que buscamos identificar. En Este proyecto, de toda la lista de enfermedades, hemos escogido el _Pneumothorax_. De esta forma, de todas las posibles enfermedades, hemos creado dos directorios: uno con las imágenes de pacientes sanos y otro con las imágenes de pacientes que presentan _Pneumothorax_.
 
-```
+```R
       Image.Index         Finding.Labels Follow.up.. Patient.ID Patient.Age
 1 00000001_000.png           Cardiomegaly           0          1          57
 2 00000001_001.png Cardiomegaly|Emphysema           1          1          58
@@ -53,19 +53,19 @@ Para obtener las imágenes del repositorio de datos hemos seguido el siguiente p
 
 - Como parte de este proyecto, hemos desarrollado un [script adicional de Python](/source/create_folders.py) que, partiendo del directorio donde hemos dejado las imágenes descomprimidas, seleccionamos una patología deseada y ejecutamos para que el script clasifique en un directorio específico las imágenes con dicha patología (a partir de la lista mencionada en la sección anterior)
 
-```
+```python
 table_orig=table
 table=table[table['Finding Labels']=='No Finding']
 ```
 Editando la anterior línea de código en este script de python le decimos al programa que almacene las imágenes de la enfermedad deseada en un nuevo directorio. Es decir, en nuestro caso, lo hemos ejecutado 2 veces:
 
 - Primero, seleccionamos las imágenes de los pacientes sanos:
-```
+```python
 table=table[table['Finding Labels']=='No Finding']
 ```
 - Segundo, seleccionamos las imágenes de los pacientes que presentan _Pneumothorax_:
 
-```
+```python
 table=table[table['Finding Labels']=='Pneumothorax']
 ```
 
