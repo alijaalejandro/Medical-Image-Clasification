@@ -59,6 +59,13 @@ Ejemplo de imágen del repositorio: ![imagen de paciente sano](../images/0001290
 
 Lo primero que debemos hacer es cargar las dependencias (librerías) que vamos a necesitar en nuestro análisis. El paquete de R más representativo de este conjunto de dependencias es [Keras](https://keras.io/). En este [post]() ya comentamos sobre el uso de Keras como framework de Deep Learning.
 
+
+```{r}
+install.packages("keras")
+```
+
+
+
 ```{r}
 library(tidyverse)
 library(rmarkdown)
