@@ -5,7 +5,7 @@ Este repositorio contiene un proyecto de clasificación de imágenes de radio-di
 
 # Contexto
 
-Este repositorio complementa al informe sobre *Tecnologías emergentes y datos abiertos: introducción a la ciencia de datos aplicada al análisis de imagen* y forma parte del contenido práctico que acompaña al informe teórico. Recordamos que la metodología seguida en esta serie de informes, estructura el contenido en tres secciones diferentes: _awarenes_, _inspire_ y _action_, siendo esta última la parte más práctica y aplicada del informe. En esta ocasión, hemos creído conveniente proporcionar al lector esta sección de _Action_ en forma de repositorio de código. En este repositorio, el lector encontrará todos los elementos necesarios para reproducir (si así lo desea) un ejemplo concreto de análisis de imagen mediante técnicas de inteligencia artificial.
+Este repositorio complementa al informe sobre *Tecnologías emergentes y datos abiertos: introducción a la ciencia de datos aplicada al análisis de imagen* y forma parte del contenido práctico que acompaña al informe teórico. Recordamos que la metodología seguida en esta serie de informes, estructura el contenido en tres secciones diferentes: _awarenes_, _inspire_ y _action_, siendo esta última la parte más práctica y aplicada del informe. En este repositorio, el lector encontrará todos los elementos necesarios para reproducir (si así lo desea) un ejemplo concreto de análisis de imagen mediante técnicas de inteligencia artificial.
 
 ![metodologia](/images/metodologia.jpg)
 
@@ -16,7 +16,9 @@ En este ejemplo, mostramos la capacidad de los algoritmos de Deep Learning para 
 
 # Proyectos previos
 
-Este proyecto es una adaptación del proyecto original de Michael Blum [tweeted](https://twitter.com/mblum_g/status/1475940763716444161?s=20) sobre el desafío [STOIC2021 - dissease-19 AI challenge](https://stoic2021.grand-challenge.org/stoic2021/). El proyecto original de Michael, partía de un conjunto de imágenes de pacientes con patología Covid-19, junto con otros pacientes sanos para hacer de contraste. En una segunda aproximación, [Olivier Gimenez](https://oliviergimenez.github.io/) utilizó un conjunto de datos similar al del proyecto original publicado en una competición de [Kaggle](https://en.wikipedia.org/wiki/Kaggle) (repositorio: <https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset>). Este nuevo _dataset_ (250 MB) era considerablemente más manejable que el original (280GB). El nuevo _dataset_ contenía algo más de 1000 imágenes de pacientes sanos y enfermos. El código del proyecto de Olivier puede encontrase en el siguiente repositorio de [Github](https://github.com/oliviergimenez/bin-image-classif). 
+Este proyecto es una adaptación del proyecto original de Michael Blum [tweeted](https://twitter.com/mblum_g/status/1475940763716444161?s=20) sobre el desafío [STOIC2021 - dissease-19 AI challenge](https://stoic2021.grand-challenge.org/stoic2021/). El proyecto original de Michael, partía de un conjunto de imágenes de pacientes con patología Covid-19, junto con otros pacientes sanos para hacer de contraste. En una segunda aproximación, [Olivier Gimenez](https://oliviergimenez.github.io/) utilizó un conjunto de datos similar al del proyecto original publicado en una competición de [Kaggle](https://en.wikipedia.org/wiki/Kaggle) (repositorio: <https://www.kaggle.com/plameneduardo/sarscov2-ctscan-dataset>). Este nuevo _dataset_ (250 MB) era considerablemente más manejable que el original (280GB). El nuevo _dataset_ contenía algo más de 1000 imágenes de pacientes sanos y enfermos. El código del proyecto de Olivier puede encontrase en el siguiente repositorio de [Github](https://github.com/oliviergimenez/bin-image-classif). Ç
+
+
 
 # Conjunto de Datos
 
@@ -69,8 +71,12 @@ table=table[table['Finding Labels']=='No Finding']
 table=table[table['Finding Labels']=='Pneumothorax']
 ```
 
-# El ejemplo paso-a-paso
+# Desarrollo
 
-Una vez leída esta introducción, el lector que lo desee puede tratar de seguir el código paso a paso que se encuentra en este [notebook de R](/source/CNN-Clasificador.Rmd). Aquellos lectores que deseen ejecutar el proyecto completo, pueden clonar o descargar este repositorio y abrir el [proyecto de RStudio](/source/UseCase1-CT-Scans.Rproj) 
+En esencia, el proyecto consiste en descargar un conjunto de imágenes médicas anotadas y estructurarlas en directorios, separando las diferentes enfermedades por carpetas. Una vez hecho esto, entrenaremos (para una patología concreta) un modelo de tipo CNN (Convolutional Neural Network) que nos permitirá clasificar automáticamente una imagen dada, identificando si el paciente en cuestión presenta dicha patología o no.
+
+## Cómo usar este repositorio
+
+Una vez leída esta introducción, el lector que lo desee puede tratar de seguir el código paso a paso que se encuentra en este [notebook de R](/source/CNN-Clasificador.Rmd). Aquellos lectores que deseen ejecutar el proyecto completo, pueden clonar o descargar este repositorio y abrir el [proyecto de RStudio](/source/UseCase1-CT-Scans.Rproj). Para aquellos desarrolladores que se encuentren más cómodos con Jupyter Notebooks, también se ha generado el [correspondiente fichero ](/source/CNN-Clasificador.ipynb). Para trabajar en el entorno Google Colab se puede invocar a la siguiente llamada ```https://colab.research.google.com/github/datosgobes/nombre-del-repositorio/blob/main/archivo-con-codigo.ipynb```
 
 
