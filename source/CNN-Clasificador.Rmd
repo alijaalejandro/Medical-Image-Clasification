@@ -1,6 +1,6 @@
 ---
 title: "Proyecto de clasificación de imágenes médicas"
-author: "Alejandro Alija"
+author: "Alejandro Alija, PhD"
 output:
   github_document:
     toc: true
