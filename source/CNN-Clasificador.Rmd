@@ -123,12 +123,10 @@ process_pix <- function(lsf) {
 En este fragmento de código cargamos las imágenes desde de los directorios donde las hemos dejado previamente.
 
 ```{r eval = TRUE}
-# Imágenes de personas CON patologías
-
-lsf <- list.files("../data/Pneumothorax/", full.names = TRUE) 
+lsf <- list.files("./data/Pneumothorax", full.names = TRUE) 
 
 # Restrinjo la lista a 1000 elementos. 
-lsf2 <- lsf[1:100]
+lsf2 <- lsf[1:length(lsf)]
 
 dissease <- process_pix(lsf2)
 
@@ -136,12 +134,12 @@ dissease <- dissease[,,,1]
 dissease_reshaped <- array_reshape(dissease, c(nrow(dissease), 100*100))
 
 # Imágenes de personas SIN patologías
-lsf <- list.files("../data/No-Finding/", full.names = TRUE) 
+lsf3 <- list.files("./data/No-Finding", full.names = TRUE) 
 
 # Restrinjo la lista a 1000 elementos. 
-lsf3 <- lsf[1:100]
+lsf4 <- lsf3[1:length(lsf3)]
 
-ndissease <- process_pix(lsf3)
+ndissease <- process_pix(lsf4)
 ndissease  <- ndissease[,,,1]
 ndissease_reshaped <- array_reshape(ndissease, c(nrow(ndissease), 100*100))
 ```
