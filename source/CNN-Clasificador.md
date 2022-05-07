@@ -1,6 +1,6 @@
 Proyecto de clasificación de imágenes médicas
 ================
-Alejandro Alija
+Alejandro Alija, PhD
 Febrero, 2022
 
 -   [Introducción](#introducción)
@@ -8,6 +8,7 @@ Febrero, 2022
 -   [Conjunto de Datos](#conjunto-de-datos)
 -   [El código paso a paso](#el-código-paso-a-paso)
     -   [Carga de dependencias](#carga-de-dependencias)
+    -   [Acceso a datos](#acceso-a-datos)
 -   [Lectura de datos](#lectura-de-datos)
 -   [Visualización previa de los
     datos/imágenes](#visualización-previa-de-los-datosimágenes)
@@ -80,6 +81,18 @@ sano](../images/00012908_000.jpg)
 
 # El código paso a paso
 
+\##Instalación de dependencias
+
+``` r
+install <- F
+if (install==T){
+install.packages("keras")
+install.packages("httr")
+install.packages("tidyverse")
+install.packages("rmarkdown")
+}
+```
+
 ## Carga de dependencias
 
 Lo primero que debemos hacer es cargar las dependencias (librerías) que
@@ -90,10 +103,33 @@ de Keras como framework de Deep Learning.
 
 ``` r
 library(tidyverse)
+library(httr)
 library(rmarkdown)
 theme_set(theme_light())
 library(keras)
 ```
+
+## Acceso a datos
+
+Para ejecutar este Notebook en (Google
+Colab)\[<https://colab.research.google.com/>\] debemos de importar los
+datos al espacio local de trabajo de Colab. Los pasos son los
+siguientes:
+
+1.  Para ello, creamos unos directorios para guardar los datos de las
+    imágenes e importamos los ficheros de imagen desde Google Drive
+
+``` r
+#Creamos directorios locales
+system("mkdir data")
+system("mkdir data/Pneumothorax")
+system("mkdir data/No-Finding")
+```
+
+2.  Subimos manualmente haciendo clic con botón derecho sobre cada una
+    de los nuevos directorios.
+
+*TBD*
 
 # Lectura de datos
 
@@ -169,7 +205,7 @@ library(patchwork)
 plotdissease + plotndissease
 ```
 
-![](CNN-Clasificador_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](CNN-Clasificador_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 # Comenzamos el análisis
 
@@ -252,7 +288,7 @@ imágenes que hemos reservado para validar.
 plot(fit_dissease)
 ```
 
-![](CNN-Clasificador_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](CNN-Clasificador_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 Calculamos las métricas de rendimiento del algoritmo.
 
@@ -261,8 +297,8 @@ model %>%
   evaluate(test, test_label)
 ```
 
-    ##      loss  accuracy 
-    ## 0.6932819 0.6000000
+    ##     loss accuracy 
+    ## 0.696626 0.420000
 
 Hacemos ahora algunas predicciones sobre imágenes de pacientes. Es
 decir, una vez entrenado y validado el algoritmo, nos preguntamos como
@@ -279,8 +315,8 @@ table(Prediction = as.numeric(predictedclasses[,2]), Truth = test_target)
 
     ##           Truth
     ## Prediction  0  1
-    ##          0 17 11
-    ##          1  9 13
+    ##          0  3  6
+    ##          1 23 18
 
 Muy genial. XXX se clasifica erróneamente como enfermo. Guardemos
 nuestro modelo para un uso posterior.

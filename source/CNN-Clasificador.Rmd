@@ -55,23 +55,54 @@ Ejemplo de imágen del repositorio: ![imagen de paciente sano](../images/0001290
 
 # El código paso a paso
 
+##Instalación de dependencias
+
+```{r}
+install <- F
+if (install==T){
+install.packages("keras")
+install.packages("httr")
+install.packages("tidyverse")
+install.packages("rmarkdown")
+}
+```
+
 ## Carga de dependencias
 
 Lo primero que debemos hacer es cargar las dependencias (librerías) que vamos a necesitar en nuestro análisis. El paquete de R más representativo de este conjunto de dependencias es [Keras](https://keras.io/). En este [post]() ya comentamos sobre el uso de Keras como framework de Deep Learning.
 
 
-```{r}
-install.packages("keras")
-```
-
-
 
 ```{r}
 library(tidyverse)
+library(httr)
 library(rmarkdown)
 theme_set(theme_light())
 library(keras)
 ```
+
+## Acceso a datos
+
+Para ejecutar este Notebook en (Google Colab)[https://colab.research.google.com/]
+debemos de importar los datos al espacio local de trabajo de Colab. Los pasos son los siguientes:
+
+
+1. Para ello, creamos unos directorios para guardar los datos de las imágenes e importamos los ficheros de imagen desde Google Drive
+
+```{r}
+
+#Creamos directorios locales
+system("mkdir data")
+system("mkdir data/Pneumothorax")
+system("mkdir data/No-Finding")
+
+```
+
+2. Subimos manualmente haciendo clic con botón derecho sobre cada una de los nuevos directorios.
+
+*TBD*
+
+
 
 # Lectura de datos
 
