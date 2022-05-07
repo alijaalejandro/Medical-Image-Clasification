@@ -58,12 +58,15 @@ Ejemplo de imágen del repositorio: ![imagen de paciente sano](../images/0001290
 ##Instalación de dependencias
 
 ```{r}
-install <- F
+install <- T
 if (install==T){
 install.packages("keras")
 install.packages("httr")
 install.packages("tidyverse")
 install.packages("rmarkdown")
+install.packages("reshape2")
+install.packages("patchwork")
+
 }
 ```
 
@@ -79,6 +82,9 @@ library(httr)
 library(rmarkdown)
 theme_set(theme_light())
 library(keras)
+library(reshape2)
+library(patchwork)
+
 ```
 
 ## Acceso a datos
@@ -86,8 +92,11 @@ library(keras)
 Para ejecutar este Notebook en (Google Colab)[https://colab.research.google.com/]
 debemos de importar los datos al espacio local de trabajo de Colab. Los pasos son los siguientes:
 
+1. Accedemos a la [siguiente dirección](https://drive.google.com/drive/folders/1jZkgiSgT7ab_wQynxtkY4QpIxljbsWvi?usp=sharing) en Google Drive y descargamos el directorio comprimido de los datos.
 
-1. Para ello, creamos unos directorios para guardar los datos de las imágenes e importamos los ficheros de imagen desde Google Drive
+2. Descomprimimos el directorio en nuestro ordenador local.
+
+3. Creamos unos directorios en Google Colab para guardar los datos de las imágenes.
 
 ```{r}
 
@@ -98,9 +107,12 @@ system("mkdir data/No-Finding")
 
 ```
 
-2. Subimos manualmente haciendo clic con botón derecho sobre cada una de los nuevos directorios.
 
-*TBD*
+4. Subimos manualmente los ficheros de imágen de acuerdo a la organización de cada carperta a Google Colab. Para ello, hacemos clic con botón derecho sobre cada una de los nuevos directorios en Colab y subimos las imágenes correspondientes.
+
+Una vez subidos los ficheros debemos de ver algo tal que así en Google Colab.
+
+Ejemplo de imágenes de datos: ![imágenes en Colab](../images/resultado_colab.png)
 
 
 
