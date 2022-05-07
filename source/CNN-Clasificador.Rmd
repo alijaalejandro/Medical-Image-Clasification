@@ -112,7 +112,7 @@ system("mkdir data/No-Finding")
 
 Una vez subidos los ficheros debemos de ver algo tal que así en Google Colab.
 
-Ejemplo de imágenes de datos: ![imágenes en Colab](../images/resultado_colab.png)
+Ejemplo de imágenes de datos: ![imágenes en Colab](../images/resultado_colab.jpeg)
 
 
 
