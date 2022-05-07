@@ -89,6 +89,8 @@ library(patchwork)
 
 ## Acceso a datos
 
+_Esta sección solo es importante para aquellos usuarios que deseen ejecutar el código en Google Colab_
+
 Para ejecutar este Notebook en (Google Colab)[https://colab.research.google.com/]
 debemos de importar los datos al espacio local de trabajo de Colab. Los pasos son los siguientes:
 
@@ -114,6 +116,9 @@ Una vez subidos los ficheros debemos de ver algo tal que así en Google Colab.
 
 Ejemplo de imágenes de datos: ![imágenes en Colab](../images/resultado_colab.jpeg)
 
+__NOTA IMPORTANTE__ 
+
+LAS IMÁGENES DE ENTRENAMIENTO Y TEST OCUPAN UN VOLUMEN EN DISCO DE 25GB DEBIDO A SU ELEVADO NUMERO. EL USUARIO HA DE TENER EN CUENTA LOS TIEMPOS DE CARGA Y DESCARGA ASÍ COMO QUE ES POSIBLE QUE NO PUEDA CARGARLAS TODAS EN COLAB. CUANTAS MENOS IMAGENES SE CARGUEN EN COLAB PEORES SERAN LOS RESULTADOS DE LOS ENTRENAMIENTOS Y LAS PREDICCIONES.
 
 
 # Lectura de datos
