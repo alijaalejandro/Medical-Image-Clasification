@@ -267,7 +267,16 @@ model %>%
   evaluate(test, test_label)
 ```
 
-Hacemos ahora algunas predicciones sobre imágenes de pacientes. Es decir, una vez entrenado y validado el algoritmo, nos preguntamos como va a clasiificar las imágenes que le vamos a dar ahora. Como sabemos "la verdad" (lo que se denomina el ground truth) sobre las imágenes, comparamos el resultado de la predicción con la verdad (lo que se denomina una tabla de confusión)
+Hacemos ahora algunas predicciones sobre imágenes de pacientes. Es decir, una vez entrenado y validado el algoritmo, nos preguntamos como va a clasiificar las imágenes que le vamos a dar ahora. Como sabemos "la verdad" (lo que se denomina el ground truth) sobre las imágenes, comparamos el resultado de la predicción con la verdad.
+Para comprobar los resultados de la predicción (que variarán en función del número de imágenes que se usen en el entrenamiento) se utiliza lo que en ciencia de datos se denomina la matriz de confusión. La matriz de confusión:
+
+* coloca en la posición 1,1 los casos que SI tenían enfermedad y el modelo clasifica como "con enfermedad"
+* coloca en la posición 2,2, los casos que NO tenían enfermedad y el modelo clasifica como "sin enfermedad"
+
+Es decir, estas son las posiciones en las que el modelo "acierta" en su clasificación.
+
+En las posiciones contrarias, es decir, la 1,2 y la 2,1 son las posiciones en las que el modelo se "equivoca". Así, la 1,2 son los resultados que el modelo clasifica como CON enfermedad y la realidad es que eran pacientes sanos. La posición  2,1 justo lo contrario.
+
 
 ```{r}
 predictedclasses <- model %>%
@@ -275,7 +284,7 @@ predictedclasses <- model %>%
 table(Prediction = as.numeric(predictedclasses[,2]), Truth = test_target)
 ```
 
-Muy genial. XXX se clasifica erróneamente como enfermo. Guardemos nuestro modelo para un uso posterior.
+Salvamos el modelo para más adelante.
 
 ```{r eval = FALSE}
 save_model_tf(model, "model/disseasemodel") # save the model
