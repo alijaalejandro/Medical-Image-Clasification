@@ -58,7 +58,7 @@ Ejemplo de imágen del repositorio: ![imagen de paciente sano](../images/0001290
 ##Instalación de dependencias
 
 ```{r}
-install <- T
+install <- F
 if (install==T){
 install.packages("keras")
 install.packages("httr")
@@ -80,7 +80,6 @@ Lo primero que debemos hacer es cargar las dependencias (librerías) que vamos a
 library(tidyverse)
 library(httr)
 library(rmarkdown)
-theme_set(theme_light())
 library(keras)
 library(reshape2)
 library(patchwork)
@@ -140,10 +139,11 @@ process_pix <- function(lsf) {
 En este fragmento de código cargamos las imágenes desde de los directorios donde las hemos dejado previamente.
 
 ```{r eval = TRUE}
-lsf <- list.files("./data/Pneumothorax", full.names = TRUE) 
+lsf <- list.files("../data/Pneumothorax", full.names = TRUE) 
 
 # Restrinjo la lista a 1000 elementos. 
-lsf2 <- lsf[1:length(lsf)]
+#lsf2 <- lsf[1:length(lsf)]
+lsf2 <- lsf[1:1500]
 
 dissease <- process_pix(lsf2)
 
@@ -151,10 +151,11 @@ dissease <- dissease[,,,1]
 dissease_reshaped <- array_reshape(dissease, c(nrow(dissease), 100*100))
 
 # Imágenes de personas SIN patologías
-lsf3 <- list.files("./data/No-Finding", full.names = TRUE) 
+lsf3 <- list.files("../data/No-Finding", full.names = TRUE) 
 
 # Restrinjo la lista a 1000 elementos. 
-lsf4 <- lsf3[1:length(lsf3)]
+#lsf4 <- lsf3[1:length(lsf3)]
+lsf4 <- lsf3[1:1500]
 
 ndissease <- process_pix(lsf4)
 ndissease  <- ndissease[,,,1]
@@ -226,7 +227,7 @@ model <- keras_model_sequential() %>%
   layer_dense(units = 2, activation = 'softmax')
 ```
 
-Compilamos el modelo con la optimizacion para una clasificación binaria. Es decir, aquí clasificamos si el paciente tiene enfermedad o no la tiene.
+Compilamos el modelo con la optimización para una clasificación binaria. Es decir, aquí clasificamos si el paciente tiene enfermedad o no la tiene.
 
 ```{r}
 model %>%
@@ -287,7 +288,8 @@ table(Prediction = as.numeric(predictedclasses[,2]), Truth = test_target)
 Salvamos el modelo para más adelante.
 
 ```{r eval = FALSE}
-save_model_tf(model, "model/disseasemodel") # save the model
+#save_model_tf(model, "model/disseasemodel") # save the model
+save_model_hdf5(model, "model/disseasemodel") # save the model
 ```
 
 # Conclusiones
