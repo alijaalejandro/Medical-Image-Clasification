@@ -1,0 +1,8 @@
+"0","```r
+
+#Creamos directorios locales
+system(\"mkdir data\")
+system(\"mkdir data/Pneumothorax\")
+system(\"mkdir data/No-Finding\")
+
+```"

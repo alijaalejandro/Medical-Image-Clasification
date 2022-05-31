@@ -1,0 +1,6 @@
+"0","set.seed(2022)"
+"0","split <- sample(2, nrow(df), replace = T, prob = c(0.8, 0.2))"
+"0","train <- df[split == 1,]"
+"0","test <- df[split == 2,]"
+"0","train_target <- df[split == 1, 10001] # label in training dataset"
+"0","test_target <- df[split == 2, 10001] # label in testing dataset"

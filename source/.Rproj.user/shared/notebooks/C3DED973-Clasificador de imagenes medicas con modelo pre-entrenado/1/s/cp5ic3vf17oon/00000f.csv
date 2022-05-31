@@ -1,0 +1,107 @@
+"0","fit_dissease <- model %>%"
+"0","  fit(x = train,"
+"0","      y = train_label, "
+"0","      epochs = 25,"
+"0","      batch_size = 512, # try also 256, 512"
+"0","      verbose = 2,"
+"0","      validation_split = 0.2)"
+"1","Epoch 1/25
+"
+"1","1/1 - 1s - loss: 0.6917 - accuracy: 0.5000 - val_loss: 0.6938 - val_accuracy: 0.5000 - 565ms/epoch - 565ms/step
+"
+"1","Epoch 2/25
+"
+"1","1/1 - 0s - loss: 0.6953 - accuracy: 0.5000 - val_loss: 0.6937 - val_accuracy: 0.5000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 3/25
+"
+"1","1/1 - 0s - loss: 0.6914 - accuracy: 0.5000 - val_loss: 0.6937 - val_accuracy: 0.5000 - 134ms/epoch - 134ms/step
+"
+"1","Epoch 4/25
+"
+"1","1/1 - 0s - loss: 0.6959 - accuracy: 0.5000 - val_loss: 0.6936 - val_accuracy: 0.5000 - 134ms/epoch - 134ms/step
+"
+"1","Epoch 5/25
+"
+"1","1/1 - 0s - loss: 0.6951 - accuracy: 0.5000 - val_loss: 0.6936 - val_accuracy: 0.5000 - 133ms/epoch - 133ms/step
+"
+"1","Epoch 6/25
+"
+"1","1/1 - 0s - loss: 0.6943 - accuracy: 0.5000 - val_loss: 0.6935 - val_accuracy: 0.5000 - 133ms/epoch - 133ms/step
+"
+"1","Epoch 7/25
+"
+"1","1/1 - 0s - loss: 0.6923 - accuracy: 0.5000 - val_loss: 0.6935 - val_accuracy: 0.5000 - 135ms/epoch - 135ms/step
+"
+"1","Epoch 8/25
+"
+"1","1/1 - 0s - loss: 0.6909 - accuracy: 0.5000 - val_loss: 0.6935 - val_accuracy: 0.5000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 9/25
+"
+"1","1/1 - 0s - loss: 0.6936 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.5000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 10/25
+"
+"1","1/1 - 0s - loss: 0.6923 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.5000 - 136ms/epoch - 136ms/step
+"
+"1","Epoch 11/25
+"
+"1","1/1 - 0s - loss: 0.6954 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.5000 - 134ms/epoch - 134ms/step
+"
+"1","Epoch 12/25
+"
+"1","1/1 - 0s - loss: 0.6922 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.5000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 13/25
+"
+"1","1/1 - 0s - loss: 0.6941 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.5000 - 138ms/epoch - 138ms/step
+"
+"1","Epoch 14/25
+"
+"1","1/1 - 0s - loss: 0.6956 - accuracy: 0.5000 - val_loss: 0.6934 - val_accuracy: 0.5000 - 144ms/epoch - 144ms/step
+"
+"1","Epoch 15/25
+"
+"1","1/1 - 0s - loss: 0.6928 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 136ms/epoch - 136ms/step
+"
+"1","Epoch 16/25
+"
+"1","1/1 - 0s - loss: 0.6927 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 17/25
+"
+"1","1/1 - 0s - loss: 0.6927 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 142ms/epoch - 142ms/step
+"
+"1","Epoch 18/25
+"
+"1","1/1 - 0s - loss: 0.6922 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 135ms/epoch - 135ms/step
+"
+"1","Epoch 19/25
+"
+"1","1/1 - 0s - loss: 0.6932 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 134ms/epoch - 134ms/step
+"
+"1","Epoch 20/25
+"
+"1","1/1 - 0s - loss: 0.6945 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 135ms/epoch - 135ms/step
+"
+"1","Epoch 21/25
+"
+"1","1/1 - 0s - loss: 0.6946 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 135ms/epoch - 135ms/step
+"
+"1","Epoch 22/25
+"
+"1","1/1 - 0s - loss: 0.6920 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 136ms/epoch - 136ms/step
+"
+"1","Epoch 23/25
+"
+"1","1/1 - 0s - loss: 0.6931 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 136ms/epoch - 136ms/step
+"
+"1","Epoch 24/25
+"
+"1","1/1 - 0s - loss: 0.6956 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 136ms/epoch - 136ms/step
+"
+"1","Epoch 25/25
+"
+"1","1/1 - 0s - loss: 0.6937 - accuracy: 0.5000 - val_loss: 0.6933 - val_accuracy: 0.5000 - 132ms/epoch - 132ms/step
+"

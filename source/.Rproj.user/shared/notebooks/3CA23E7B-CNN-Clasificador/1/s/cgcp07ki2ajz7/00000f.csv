@@ -1,0 +1,4 @@
+"0","model %>%"
+"0","  compile(optimizer = 'adam',"
+"0","          loss = 'binary_crossentropy', "
+"0","          metrics = c('accuracy'))"

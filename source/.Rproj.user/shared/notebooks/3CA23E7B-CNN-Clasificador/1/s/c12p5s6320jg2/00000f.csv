@@ -1,0 +1,8 @@
+"0","model <- keras_model_sequential() %>%"
+"0","  layer_dense(units = 512, activation = ""relu"") %>% "
+"0","  layer_dropout(0.4) %>%"
+"0","  layer_dense(units = 256, activation = ""relu"") %>%"
+"0","  layer_dropout(0.3) %>%"
+"0","  layer_dense(units = 128, activation = ""relu"") %>%"
+"0","  layer_dropout(0.2) %>%"
+"0","  layer_dense(units = 2, activation = 'softmax')"

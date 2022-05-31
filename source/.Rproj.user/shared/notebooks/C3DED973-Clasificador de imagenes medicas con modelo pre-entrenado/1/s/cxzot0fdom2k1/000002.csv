@@ -1,0 +1,5 @@
+"0","df <- rbind(cbind(dissease_reshaped, 1), # 1 = dissease"
+"0","            cbind(ndissease_reshaped, 0)) # 0 = no dissease"
+"0","set.seed(1234)"
+"0","shuffle <- sample(nrow(df), replace = F)"
+"0","df <- df[shuffle, ]"

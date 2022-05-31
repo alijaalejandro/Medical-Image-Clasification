@@ -1,0 +1,12 @@
+"0","```r
+install <- F
+if (install==T){
+install.packages(\"keras\")
+install.packages(\"httr\")
+install.packages(\"tidyverse\")
+install.packages(\"rmarkdown\")
+install.packages(\"reshape2\")
+install.packages(\"patchwork\")
+
+}
+```"

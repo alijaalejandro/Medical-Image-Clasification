@@ -1,0 +1,111 @@
+"0","fit_dissease <- model %>%"
+"0","  fit(x = train,"
+"0","      y = train_label, "
+"0","      epochs = 25,"
+"0","      batch_size = 512, # try also 256, 512"
+"0","      verbose = 2,"
+"0","      validation_split = 0.2)"
+"1","Epoch 1/25
+"
+"2","2022-05-29 16:21:04.998966: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+"
+"2","2022-05-29 16:21:05.194720: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+"
+"1","1/1 - 1s - loss: 0.6939 - accuracy: 0.5083 - val_loss: 0.9774 - val_accuracy: 0.3000 - 940ms/epoch - 940ms/step
+"
+"1","Epoch 2/25
+"
+"1","1/1 - 0s - loss: 0.8041 - accuracy: 0.5500 - val_loss: 0.6161 - val_accuracy: 0.7000 - 144ms/epoch - 144ms/step
+"
+"1","Epoch 3/25
+"
+"1","1/1 - 0s - loss: 0.9282 - accuracy: 0.4417 - val_loss: 0.7391 - val_accuracy: 0.3000 - 140ms/epoch - 140ms/step
+"
+"1","Epoch 4/25
+"
+"1","1/1 - 0s - loss: 0.7539 - accuracy: 0.4917 - val_loss: 0.8610 - val_accuracy: 0.3000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 5/25
+"
+"1","1/1 - 0s - loss: 0.8006 - accuracy: 0.5583 - val_loss: 0.7548 - val_accuracy: 0.3000 - 153ms/epoch - 153ms/step
+"
+"1","Epoch 6/25
+"
+"1","1/1 - 0s - loss: 0.7392 - accuracy: 0.5583 - val_loss: 0.6807 - val_accuracy: 0.6333 - 140ms/epoch - 140ms/step
+"
+"1","Epoch 7/25
+"
+"1","1/1 - 0s - loss: 0.7161 - accuracy: 0.5250 - val_loss: 0.6551 - val_accuracy: 0.7000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 8/25
+"
+"1","1/1 - 0s - loss: 0.7264 - accuracy: 0.4833 - val_loss: 0.6553 - val_accuracy: 0.7000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 9/25
+"
+"1","1/1 - 0s - loss: 0.7511 - accuracy: 0.4667 - val_loss: 0.6690 - val_accuracy: 0.7000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 10/25
+"
+"1","1/1 - 0s - loss: 0.7098 - accuracy: 0.4833 - val_loss: 0.6983 - val_accuracy: 0.4000 - 142ms/epoch - 142ms/step
+"
+"1","Epoch 11/25
+"
+"1","1/1 - 0s - loss: 0.7407 - accuracy: 0.4167 - val_loss: 0.7279 - val_accuracy: 0.3000 - 143ms/epoch - 143ms/step
+"
+"1","Epoch 12/25
+"
+"1","1/1 - 0s - loss: 0.7218 - accuracy: 0.5250 - val_loss: 0.7319 - val_accuracy: 0.3000 - 140ms/epoch - 140ms/step
+"
+"1","Epoch 13/25
+"
+"1","1/1 - 0s - loss: 0.7018 - accuracy: 0.5083 - val_loss: 0.7179 - val_accuracy: 0.3000 - 142ms/epoch - 142ms/step
+"
+"1","Epoch 14/25
+"
+"1","1/1 - 0s - loss: 0.7190 - accuracy: 0.5250 - val_loss: 0.7075 - val_accuracy: 0.3000 - 136ms/epoch - 136ms/step
+"
+"1","Epoch 15/25
+"
+"1","1/1 - 0s - loss: 0.7007 - accuracy: 0.5250 - val_loss: 0.6954 - val_accuracy: 0.4667 - 139ms/epoch - 139ms/step
+"
+"1","Epoch 16/25
+"
+"1","1/1 - 0s - loss: 0.7170 - accuracy: 0.5333 - val_loss: 0.6765 - val_accuracy: 0.7000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 17/25
+"
+"1","1/1 - 0s - loss: 0.6873 - accuracy: 0.5333 - val_loss: 0.6590 - val_accuracy: 0.7000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 18/25
+"
+"1","1/1 - 0s - loss: 0.7010 - accuracy: 0.5250 - val_loss: 0.6494 - val_accuracy: 0.7000 - 142ms/epoch - 142ms/step
+"
+"1","Epoch 19/25
+"
+"1","1/1 - 0s - loss: 0.7216 - accuracy: 0.5000 - val_loss: 0.6505 - val_accuracy: 0.7000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 20/25
+"
+"1","1/1 - 0s - loss: 0.7101 - accuracy: 0.5250 - val_loss: 0.6574 - val_accuracy: 0.7000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 21/25
+"
+"1","1/1 - 0s - loss: 0.7018 - accuracy: 0.5000 - val_loss: 0.6749 - val_accuracy: 0.7000 - 137ms/epoch - 137ms/step
+"
+"1","Epoch 22/25
+"
+"1","1/1 - 0s - loss: 0.7363 - accuracy: 0.5333 - val_loss: 0.6957 - val_accuracy: 0.5000 - 141ms/epoch - 141ms/step
+"
+"1","Epoch 23/25
+"
+"1","1/1 - 0s - loss: 0.6838 - accuracy: 0.5667 - val_loss: 0.7099 - val_accuracy: 0.3333 - 147ms/epoch - 147ms/step
+"
+"1","Epoch 24/25
+"
+"1","1/1 - 0s - loss: 0.7384 - accuracy: 0.5333 - val_loss: 0.7148 - val_accuracy: 0.3000 - 146ms/epoch - 146ms/step
+"
+"1","Epoch 25/25
+"
+"1","1/1 - 0s - loss: 0.7094 - accuracy: 0.5583 - val_loss: 0.7143 - val_accuracy: 0.3333 - 147ms/epoch - 147ms/step
+"

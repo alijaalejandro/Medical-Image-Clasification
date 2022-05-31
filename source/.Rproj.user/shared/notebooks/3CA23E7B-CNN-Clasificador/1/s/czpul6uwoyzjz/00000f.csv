@@ -1,0 +1,111 @@
+"0","fit_dissease <- model %>%"
+"0","  fit(x = train,"
+"0","      y = train_label, "
+"0","      epochs = 25,"
+"0","      batch_size = 512, # try also 256, 512"
+"0","      verbose = 2,"
+"0","      validation_split = 0.2)"
+"1","Epoch 1/25
+"
+"2","2022-05-29 20:08:54.499873: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+"
+"2","2022-05-29 20:08:55.627581: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:113] Plugin optimizer for device_type GPU is enabled.
+"
+"1","4/4 - 2s - loss: 0.6884 - accuracy: 0.5441 - val_loss: 0.6715 - val_accuracy: 0.4959 - 2s/epoch - 496ms/step
+"
+"1","Epoch 2/25
+"
+"1","4/4 - 0s - loss: 0.6950 - accuracy: 0.5493 - val_loss: 0.6624 - val_accuracy: 0.6680 - 238ms/epoch - 60ms/step
+"
+"1","Epoch 3/25
+"
+"1","4/4 - 0s - loss: 0.6733 - accuracy: 0.5861 - val_loss: 0.6624 - val_accuracy: 0.5415 - 203ms/epoch - 51ms/step
+"
+"1","Epoch 4/25
+"
+"1","4/4 - 0s - loss: 0.6628 - accuracy: 0.6162 - val_loss: 0.6352 - val_accuracy: 0.6618 - 208ms/epoch - 52ms/step
+"
+"1","Epoch 5/25
+"
+"1","4/4 - 0s - loss: 0.6494 - accuracy: 0.6291 - val_loss: 0.6522 - val_accuracy: 0.5332 - 225ms/epoch - 56ms/step
+"
+"1","Epoch 6/25
+"
+"1","4/4 - 0s - loss: 0.6331 - accuracy: 0.6478 - val_loss: 0.5748 - val_accuracy: 0.7925 - 203ms/epoch - 51ms/step
+"
+"1","Epoch 7/25
+"
+"1","4/4 - 0s - loss: 0.5945 - accuracy: 0.7210 - val_loss: 0.5719 - val_accuracy: 0.6100 - 206ms/epoch - 52ms/step
+"
+"1","Epoch 8/25
+"
+"1","4/4 - 0s - loss: 0.5712 - accuracy: 0.6981 - val_loss: 0.5027 - val_accuracy: 0.7676 - 204ms/epoch - 51ms/step
+"
+"1","Epoch 9/25
+"
+"1","4/4 - 0s - loss: 0.5156 - accuracy: 0.7510 - val_loss: 0.4099 - val_accuracy: 0.9129 - 219ms/epoch - 55ms/step
+"
+"1","Epoch 10/25
+"
+"1","4/4 - 0s - loss: 0.5235 - accuracy: 0.7453 - val_loss: 0.3543 - val_accuracy: 0.9793 - 209ms/epoch - 52ms/step
+"
+"1","Epoch 11/25
+"
+"1","4/4 - 0s - loss: 0.4235 - accuracy: 0.8283 - val_loss: 0.3504 - val_accuracy: 0.9315 - 212ms/epoch - 53ms/step
+"
+"1","Epoch 12/25
+"
+"1","4/4 - 0s - loss: 0.3494 - accuracy: 0.8916 - val_loss: 0.3213 - val_accuracy: 0.9149 - 217ms/epoch - 54ms/step
+"
+"1","Epoch 13/25
+"
+"1","4/4 - 0s - loss: 0.2886 - accuracy: 0.9087 - val_loss: 0.1327 - val_accuracy: 1.0000 - 214ms/epoch - 54ms/step
+"
+"1","Epoch 14/25
+"
+"1","4/4 - 0s - loss: 0.1830 - accuracy: 0.9787 - val_loss: 0.1572 - val_accuracy: 0.9813 - 212ms/epoch - 53ms/step
+"
+"1","Epoch 15/25
+"
+"1","4/4 - 0s - loss: 0.1417 - accuracy: 0.9793 - val_loss: 0.0440 - val_accuracy: 1.0000 - 200ms/epoch - 50ms/step
+"
+"1","Epoch 16/25
+"
+"1","4/4 - 0s - loss: 0.0668 - accuracy: 0.9984 - val_loss: 0.0263 - val_accuracy: 1.0000 - 202ms/epoch - 51ms/step
+"
+"1","Epoch 17/25
+"
+"1","4/4 - 0s - loss: 0.0404 - accuracy: 0.9995 - val_loss: 0.0216 - val_accuracy: 1.0000 - 199ms/epoch - 50ms/step
+"
+"1","Epoch 18/25
+"
+"1","4/4 - 0s - loss: 0.0276 - accuracy: 0.9995 - val_loss: 0.0091 - val_accuracy: 1.0000 - 216ms/epoch - 54ms/step
+"
+"1","Epoch 19/25
+"
+"1","4/4 - 0s - loss: 0.0247 - accuracy: 0.9990 - val_loss: 0.0037 - val_accuracy: 1.0000 - 210ms/epoch - 52ms/step
+"
+"1","Epoch 20/25
+"
+"1","4/4 - 0s - loss: 0.0215 - accuracy: 0.9964 - val_loss: 0.0035 - val_accuracy: 1.0000 - 212ms/epoch - 53ms/step
+"
+"1","Epoch 21/25
+"
+"1","4/4 - 0s - loss: 0.0109 - accuracy: 1.0000 - val_loss: 0.0022 - val_accuracy: 1.0000 - 203ms/epoch - 51ms/step
+"
+"1","Epoch 22/25
+"
+"1","4/4 - 0s - loss: 0.0077 - accuracy: 1.0000 - val_loss: 0.0015 - val_accuracy: 1.0000 - 212ms/epoch - 53ms/step
+"
+"1","Epoch 23/25
+"
+"1","4/4 - 0s - loss: 0.0049 - accuracy: 1.0000 - val_loss: 9.3375e-04 - val_accuracy: 1.0000 - 203ms/epoch - 51ms/step
+"
+"1","Epoch 24/25
+"
+"1","4/4 - 0s - loss: 0.0036 - accuracy: 1.0000 - val_loss: 9.0333e-04 - val_accuracy: 1.0000 - 224ms/epoch - 56ms/step
+"
+"1","Epoch 25/25
+"
+"1","4/4 - 0s - loss: 0.0024 - accuracy: 1.0000 - val_loss: 6.0331e-04 - val_accuracy: 1.0000 - 202ms/epoch - 50ms/step
+"
